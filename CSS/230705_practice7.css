@@ -2,7 +2,7 @@ input[disabled] {
   background-color: red;
 }
 
-input[placholder="이름"] {
+input[placeholder="이름"] {
   background-color: orange;
 }
 
