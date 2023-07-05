@@ -1,0 +1,44 @@
+h1 {
+  background-color: black;
+  color: white;
+  width: fit-content; /* fit-content: 내용물에 맞게 가로크기를 줄일 수 있다. */
+}
+
+div {
+  height: 100px;
+}
+
+.red {
+  background-color: red;
+  width: 100px;
+}
+
+.orange {
+  background-color: orange;
+  width: 200px;
+}
+
+.yellow {
+  background-color: yellow;
+  width: 300px;
+}
+
+.green {
+  background-color: green;
+  width: 400px;
+}
+
+.blue {
+  background-color: blue;
+  width: 500px;
+}
+
+.darkblue {
+  background-color: darkblue;
+  width: 600px;
+}
+
+.purple {
+  background-color: purple;
+  width: 700px;
+}
