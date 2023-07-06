@@ -1,0 +1,8 @@
+div {
+  width: 200px;
+  height: 300px;
+  border-width: 10px 5px 5px 10px;
+  border-style: dashed dotted double solid;
+  border-color: red pink black blue;
+  border-top: 15px dotted brown;
+}

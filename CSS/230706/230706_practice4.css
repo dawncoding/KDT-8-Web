@@ -1,0 +1,17 @@
+.contentbox {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border: 15px solid red;
+  background-color: orange;
+  box-sizing: content-box;
+}
+
+.borderbox {
+  width: 100px;
+  height: 100px;
+  padding: 20px;
+  border: 15px solid red;
+  background-color: orange;
+  box-sizing: border-box;
+}

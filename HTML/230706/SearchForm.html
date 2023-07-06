@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="../../CSS/230706/SearchForm.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>설문조사 폼</title>
+  </head>
+  <body>
+    <div class="box">
+      <div class="title">설문조사</div>
+      <br />
+      <div class="name">이름<input class="nameinput" type="text" /></div>
+      <div class="email">
+        이메일<input
+          class="emailinput"
+          type="text"
+          placeholder="love@email.com"
+        />
+      </div>
+      <div class="age">
+        나이
+        <input type="radio" value="10" />10대
+        <input type="radio" value="20" />20대
+        <input type="radio" value="30" />30대
+        <input type="radio" value="40" />40대
+        <input type="radio" value="50" />50대
+        <input type="radio" value="60" />60대 이상
+      </div>
+      <br />
+      <div>원하는 강의(복수응답가능합니다.)</div>
+      <input type="checkbox" value="html" />html
+      <input type="checkbox" value="css" />css
+      <input type="checkbox" value="javascript" />javascript
+      <br />
+      <textarea placeholder="하고 싶은 말을 써주세요:&#41;"></textarea>
+      <br />
+      <input class="submit" type="button" value="제출" />
+    </div>
+  </body>
+</html>

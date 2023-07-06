@@ -1,0 +1,55 @@
+body {
+  background-color: skyblue;
+  font-family: "SUITE-Regular";
+}
+
+input {
+  font-family: "SUITE-Regular";
+  border-radius: 10px;
+}
+
+.box {
+  background-color: white;
+  border: 25px groove lightblue;
+  border-radius: 10px;
+  width: 50vw;
+  height: 50vw;
+  margin: calc(50% - 25vw);
+  overflow: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.name,
+.email {
+  margin-bottom: 10px;
+}
+
+.nameinput,
+.emailinput {
+  margin-left: 10px;
+}
+
+textarea {
+  width: 80%;
+  height: 50%;
+  margin-top: 20px;
+  margin-left: calc(50% - 25vw);
+  border-radius: 10px;
+}
+
+.submit:hover {
+  background-color: skyblue;
+  color: white;
+}
+
+@font-face {
+  font-family: "SUITE-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
