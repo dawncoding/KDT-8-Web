@@ -1,0 +1,32 @@
+.container {
+  width: 500px;
+  height: 500px;
+  position: relative;
+}
+
+.item1 {
+  width: 100px;
+  height: 100px;
+  background-color: #9afaff;
+  position: absolute;
+  z-index: 10;
+}
+
+.item2 {
+  width: 100px;
+  height: 100px;
+  background-color: #84ff8d;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.item3 {
+  width: 100px;
+  height: 100px;
+  background-color: #ffeb88;
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  z-index: 3;
+}
