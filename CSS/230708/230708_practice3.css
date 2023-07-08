@@ -1,0 +1,35 @@
+div {
+  width: 50px;
+  height: 50px;
+  background-color: lightpink;
+  border-radius: 50%;
+  position: relative;
+  animation-name: myanimation;
+  animation-duration: 3s;
+  animation-iteration-count: 6;
+  animation-timing-function: ease;
+  animation-delay: 1s;
+}
+
+@keyframes myanimation {
+  0% {
+    top: 0px;
+    left: 0px;
+  }
+  25% {
+    top: 0px;
+    left: 100px;
+  }
+  50% {
+    top: 100px;
+    left: 100px;
+  }
+  75% {
+    top: 100px;
+    left: 0px;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+  }
+}

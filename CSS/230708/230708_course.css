@@ -1,0 +1,72 @@
+/* div {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+} */
+
+/* div:hover {
+  transform: translate(100px, 100px);
+  transform: scale(5);
+  transform: rotate(45deg);
+} */
+
+/* div {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  transition: width 2s ease 0.5s;
+  transition-property: width;
+  transition-duration: 2s;
+  transition-timing-function: ease;
+  transition-delay: 0.5s;
+}
+
+div:hover {
+  width: 300px;
+} */
+
+div {
+  width: 100px;
+  height: 100px;
+  background-color: cyan;
+  position: relative;
+  animation-name: myanimation;
+  animation-duration: 2s;
+  animation-iteration-count: 3;
+  animation-timing-function: ease;
+  /* 애니메이션이 동작하기 전 딜레이 */
+  animation-delay: 1s;
+}
+
+/* 애니메이션 속성 0%에서 다 설정해놔야 함*/
+@keyframes myanimation {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    left: 100px;
+    top: 10px;
+  }
+  50% {
+    left: 200px;
+    top: 20px;
+  }
+  75% {
+    left: 100px;
+    top: 30px;
+  }
+  100% {
+    left: 0px;
+    top: 40px;
+  }
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+img:hover {
+  backface-visibility: hidden;
+}

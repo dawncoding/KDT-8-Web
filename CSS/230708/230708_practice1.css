@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 500px;
+  height: 250px;
+  background-color: lightgray;
+  /* position: relative; */
+}
+
+img {
+  width: 150px;
+  height: 80px;
+  transform: skewY(25deg);
+  /* position: absolute; */
+}
+
+/* .img1 {
+  top: 90px;
+  left: 100px;
+  z-index: 10;
+}
+
+.img2 {
+  top: 90px;
+  left: 170px;
+  z-index: 5;
+}
+
+.img3 {
+  top: 90px;
+  left: 240px;
+} */
