@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let days = ["M", "T", "W", "T", "F", "S", "S", "T"];
+      console.log("days: ", days);
+
+      // 0. 길이
+      console.log("length: ", days.length);
+
+      // 1. 마지막 요소 추가/삭제
+      // push: 마지막 위치에 원하는 만큼 요소를 추가하고 추가된 이후의 리스트의 길이를 반환해주는 함수
+      // push(...items: string[]): number 여기서 "...": 전개 연산자
+      let pushResult = days.push("z", "a");
+      console.log("push: ", days);
+      console.log("pushResult: ", pushResult);
+
+      // pop: 마지막 위치의 요소를 추출해 반환해준다. (추출하기 때문에 리스트에서는 삭제)
+      let popResult = days.pop(); // : string | defined -> 문자열 혹은 undefined를 반환하겠다는 의미
+      console.log("pop: ", days);
+      console.log("popResult: ", popResult);
+
+      // 2. 맨 앞 요소 추가/삭제
+      // unshift: 첫번째 위치에 원하는 만큼 요소를 추가하고 추가된 이후의 리스트 길이를 반환해주는 함수
+      let unshiftResult = days.unshift("r", "e");
+      console.log("unshift: ", days);
+      console.log("unshiftResult: ", unshiftResult); // 추가된 이후의 배열의 길이 반환
+      // shift: 첫번째 위치의 요소를 추출해 반환해준다. (추출하기 때문에 리스트에서는 삭제)
+      let shiftResult = days.shift();
+      console.log("shift: ", days);
+      console.log("shiftResult: ", shiftResult);
+
+      // 3. 인덱스 가져오기
+      // indexOf(찾을 요소, [검색을 시작할 인덱스])
+      console.log("indexOf T: ", days.indexOf("T"));
+      console.log("indexOf T2: ", days.indexOf("T", 3)); // 3번째 인덱스에서부터 T가 나오고 있는지 검색, 중간에 있는 문자 검색하고 싶을 때 사용
+
+      // 4. includes() 포함 유무
+      // includes(찾을 요소, [검색을 시작할 인덱스])
+      // includes(): 요소를 찾고, 그에 대한 결과를 boolean 타입으로 반환한다.
+      console.log("inclues S", days.includes("S"));
+
+      // 5. reverse(): 반전시키는 함수
+      console.log("reverse: ", days.reverse());
+
+      // 6. join(): 배열을 연결해서 문자열로 가져온다.
+      // join([연결고리])
+      console.log("join: ", days.join()); // 기본값: ","
+      console.log("join: ", days.join(" "));
+      console.log("join: ", days.join("&"));
+
+      console.log("--------------------------------------");
+      let str = "Holiday";
+      console.log("str: ", str);
+
+      let splitResult = str.split();
+      console.log("splitResult: ", splitResult);
+
+      let reverseResult = splitResult.reverse();
+      console.log("reverseResult: ", reverseResult);
+
+      let joinResult = reverseResult.join("");
+      console.log("joinResult: ", joinResult);
+
+      // 메소드 체이닝: 각각의 다른 메소드를 연결해 사용하는 개념
+      // 메소드에 return 값이 있을 때만 사용 가능
+      // str.split("") > 문자열이 한 글자씩 잘린 배열
+      // str.split("").reverse() = "문자열이 한 글자씩 잘린 배열".reverse()
+      // "문자열이 한 글자씩 잘린 배열".reverse() > 뒤집힌 배열
+      // "뒤집힌 배열".join()
+      console.log("total: ", str.split("").reverse().join(""));
+
+      // shallow copy, deep copy
+      let a = 1;
+      console.log("a: ", a);
+      let b = a;
+      console.log("b: ", b);
+      b += 1;
+      console.log("b: ", b);
+
+      let arr1 = [1, 2, 3];
+      let arr2 = [...arr1]; // deep copy
+      let arr3 = arr2;
+      let arr4 = arr1;
+      arr2.push(4);
+      console.log("arr1: ", arr1);
+      console.log("arr2: ", arr2);
+      console.log("arr3: ", arr3);
+      console.log("arr4: ", arr4);
+    </script>
+  </head>
+  <body></body>
+</html>
