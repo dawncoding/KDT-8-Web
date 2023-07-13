@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function input_content() {
+        let get_writer = document.getElementById("writer");
+        let get_writer_content = document.getelementById("writer_content");
+
+        let date = new Date();
+        let year = date.getFullYear();
+        let month = date.getMonth() + 1;
+        let day = date.getDate();
+        let hour = date.getHours();
+        let minute = date.getMinutes();
+      }
+    </script>
+  </head>
+  <body>
+    <h3>방명록입니다.</h3>
+    <div>작성자 <input type="text" id="writer" /></div>
+    <div>내용 <input type="text" id="writer_content" /></div>
+    <br />
+    <button onclick="input_content()">작성</button>
+    <br />
+    <table>
+      <tr id="table_title">
+        <th>번호</th>
+        <th>작성자</th>
+        <th>내용</th>
+        <th>작성일</th>
+      </tr>
+      <tr id="table_content"></tr>
+    </table>
+  </body>
+</html>
