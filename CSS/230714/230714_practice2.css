@@ -1,0 +1,41 @@
+.red {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+
+.orange {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+}
+
+.yellow {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+
+.yellowgreen {
+  width: 100px;
+  height: 100px;
+  background-color: yellowgreen;
+}
+
+.lightblue {
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+}
+
+.blue {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+}
+
+.purple {
+  width: 100px;
+  height: 100px;
+  background-color: violet;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function calculate() {
+        let value1 = document.getElementById("value1").value; // String
+        let value2 = document.getElementById("value2").value; // String
+
+        let op = document.getElementById("op").value;
+        let test = value1 + op + value2;
+        let result = eval(value1 + op + value2); // eval 위험한 함수, 실무에서는 안 쓰는 게 좋음
+        document.getElementById("result").value = result;
+
+        // value1 = Number(value1);
+        // value2 = Number(value2);
+        // let result = 0;
+        // switch (op) {
+        //   case "+":
+        //     result = value1 + value2;
+        //     break;
+        //   case "-":
+        //     result = value1 - value2;
+        //     break;
+        // }
+        // document.getElementById("result").value = result;
+      }
+      function reset() {
+        document.getElementById("result").value = "";
+      }
+    </script>
+  </head>
+  <body>
+    값1 : <input type="text" id="value1" />
+    <br />
+    값2 : <input type="text" id="value2" />
+    <br />
+    연산자 : <input type="text" id="op" />
+    <br />
+    결과 : <input type="text" id="result" />
+    <br />
+    <button onclick="calculate()">계산하기</button>
+    <button onclick="reset()">초기화</button>
+  </body>
+</html>

@@ -4,35 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+
     <script>
-      function input_content() {
-        let get_writer = document.getElementById("writer");
-        let get_writer_content = document.getelementById("writer_content");
+      let num = 1;
+      function writeList() {
+        let writer = document.getElementById("writer").value;
+        let content = document.getElementById("content").value;
 
         let date = new Date();
-        let year = date.getFullYear();
-        let month = date.getMonth() + 1;
-        let day = date.getDate();
-        let hour = date.getHours();
-        let minute = date.getMinutes();
+        // 1.table 요소 가져온 후 tr, td createElement 만들고 tr에 append로 넣고, table에 tr 넣고
+
+        let tr = document.createElement("tr");
+        let html = `<td>${num}</td>`;
+        tr.innerHTML = html;
+        // let td1 = document.createElement("td");
+        // td1.innerText = num;
+        // td1.innerText = document.querySelectorAll("tr").length;
+        // let td2 = document.createElement("td");
+        // td2.innerText = writer;
+        // let td3 = document.createElement("td");
+        // td3.innerText = content;
+        // let td4 = document.createElement("td");
+        // td4.innerText = date;
+
+        // tr.append(td1);
+        // tr.append(td2);
+        // tr.append(td3);
+        // tr.append(td4);
+
+        let table = document.querySelector("table");
+        table.append(tr);
+        num++;
       }
     </script>
   </head>
   <body>
-    <h3>방명록입니다.</h3>
-    <div>작성자 <input type="text" id="writer" /></div>
-    <div>내용 <input type="text" id="writer_content" /></div>
+    작성자 : <input type="text" id="writer" />
     <br />
-    <button onclick="input_content()">작성</button>
+    내용 : <input type="text" id="content" />
     <br />
-    <table>
-      <tr id="table_title">
-        <th>번호</th>
-        <th>작성자</th>
-        <th>내용</th>
-        <th>작성일</th>
+    <button onclick="writeList()">작성</button>
+
+    <table border="1">
+      <tr>
+        <td>번호</td>
+        <td>작성자</td>
+        <td>내용</td>
+        <td>시간</td>
       </tr>
-      <tr id="table_content"></tr>
     </table>
   </body>
 </html>
