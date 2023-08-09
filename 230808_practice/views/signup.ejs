@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <form name="signup-form">
+      <fieldset>
+        <legend>회원 정보를 입력해주세요!</legend>
+        <label for="userId">아이디</label>
+        <input
+          type="text"
+          id="userId"
+          placeholder="아이디를 입력해주세요."
+          required
+        />
+        <br />
+        <label for="userName">사용자 이름</label>
+        <input
+          type="text"
+          id="userName"
+          placeholder="이름을 입력해주세요."
+          required
+        />
+        <br />
+        <label for="userPw">비밀번호</label>
+        <input
+          type="password"
+          id="userPw"
+          placeholder="비밀번호를 입력해주세요."
+          required
+        />
+        <br />
+        <button type="button" onclick="userSignUp()">회원가입</button>
+      </fieldset>
+    </form>
+    <div class="result"></div>
+
+    <!-- axios post -->
+    <script>
+      const resultBox = document.querySelector(".result");
+      function userSignUp() {
+        const form = document.forms["signup-form"];
+        axios({
+          method: "POST",
+          url: "/user/signup",
+          data: {
+            userId: form.userId.value,
+            userName: form.userName.value,
+            userPw: form.userPw.value,
+          },
+        }).then((res) => {
+          console.log("res", res);
+          resultBox.innerHTML =
+            '회원가입이 완료되었습니다.<br/><a href="/user">홈으로 돌아가기</a>';
+        });
+      }
+    </script>
+  </body>
+</html>
