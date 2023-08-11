@@ -53,6 +53,9 @@ const sequelize = new Sequelize(
 
 // model
 db.Visitor = require("./Visitor")(sequelize, Sequelize);
+// const a = require("./Visitor");
+// const b = a(sequelize, Sequelize);
+// db.Visitor =
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
