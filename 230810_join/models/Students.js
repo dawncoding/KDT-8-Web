@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
 const studentModel = (sequelize) => {
-  const Student = sequelize.define("student", {
+  const Student = sequelize.define("Student", {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -12,7 +12,7 @@ const studentModel = (sequelize) => {
       type: DataTypes.STRING(31),
       allowNull: false,
     },
-    emal: {
+    email: {
       type: DataTypes.STRING(63),
     },
     password: {
