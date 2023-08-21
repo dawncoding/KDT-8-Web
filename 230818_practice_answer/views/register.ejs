@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>회원가입</title>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <form name="register">
+      <input type="text" name="userid" id="userid" placeholder="ID" /><br />
+      <input type="password" name="pw" id="pw" placeholder="PW" /><br />
+      <input type="text" id="name" placeholder="NAME" /><br />
+      <button type="button" onclick="registerFunc()">회원가입</button>
+    </form>
+
+    <script>
+      async function registerFunc() {
+        // input 태그의 id 속성값으로 데이터 가져오기
+        const userid = document.getElementById("userid").value;
+        const pw = document.getElementById("pw").value;
+        const name = document.getElementById("name").value;
+        const data = {
+          userid, // userid: userid인데 key와 value 이름이 동일하기 때문에 userid로 간략하게 작성한다.
+          pw,
+          name,
+        };
+
+        const result = await axios({
+          method: "POST",
+          url: "/register",
+          data, // data: data
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 const express = require("express");
-const controller = require("../contoller/CUser");
+const controller = require("../controller/CUser");
 const router = express.Router();
 
 // GET localhost:8000/user/

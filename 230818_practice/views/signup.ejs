@@ -25,13 +25,12 @@
 
       function register() {
         const form = document.forms["form_register"];
-        hash = bcryptPassword(form.pw.value);
         axios({
           method: "POST",
           url: "/user/signup",
           data: {
             userid: form.userid.value,
-            pw: hash,
+            pw: form.pw.value,
             name: form.nickname.value,
           },
         }).then((res) => {
