@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>POST 실습</h1>
+    <form name="login">
+      <label for="username">아이디</label>
+      <input type="text" id="username" required />
+      <br />
+      <label for="password">패쓰워드</label>
+      <input type="password" id="password" required />
+      <br />
+      <button type="button" onclick="post_login()">로그인</button>
+    </form>
+    <br />
+    <div class="result"></div>
+    <script>
+      //코드 실습
+      const resultBox = document.querySelector(".result");
+      async function post_login() {
+        console.log("axios post");
+        const form = document.forms["login"];
+        const data = {
+          username: form.username.value,
+          password: form.password.value,
+        };
+        try {
+          const result = await axios({
+            method: "POST",
+            url: "/resultPost",
+            data,
+          });
+          resultBox.textContent = `POST /axios 요청 완료! ${result.data.userInfo.id}님의 비밀번호는 ${result.data.userInfo.password}인가요?`;
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    </script>
+  </body>
+</html>
