@@ -35,7 +35,7 @@
             url: "/resultPost",
             data,
           });
-          resultBox.textContent = `POST /axios 요청 완료! ${result.data.userInfo.id}님의 비밀번호는 ${result.data.userInfo.password}인가요?`;
+          resultBox.textContent = `POST /axios 요청 완료! ${result.data.userInfo.id}님의 비밀번호는 ${result.data.userInfo.pw}인가요?`;
         } catch (error) {
           console.log(error);
         }

@@ -6,9 +6,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// 해당 폴더의 index.js는 생략 가능하다.
-// const router = require("./routes")
-// const router = require("./routes/index")
+//router 분리
 const router = require("./routes/main");
 app.use("/", router);
 

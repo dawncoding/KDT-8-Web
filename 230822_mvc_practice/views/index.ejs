@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>회원 리스트 조회</h1>
+    <ul>
+      <% for (let i = 0; i < users.length; i++) { %>
+      <li>
+        <p>이름: <%= users[i].name %></p>
+        <p>성별: <%= users[i].gender %></p>
+        <p>전공: <%= users[i].major %></p>
+      </li>
+      <% } %>
+    </ul>
+    <div>
+      <form name="register">
+        <input type="text" id="name" placeholder="name" /><br />
+        <input type="text" id="gender" placeholder="gender" /><br />
+        <input type="text" id="major" placeholder="major" /><br />
+        <button type="button" onclick="registerFunc()">등록</button>
+      </form>
+    </div>
+
+    <script>
+      const lists = document.querySelector("#lists li");
+      async function registerFunc() {
+        const form = document.forms["register"];
+        const data = {
+          name: form.name.value,
+          gender: form.gender.value,
+          major: form.major.value,
+        };
+        axios({
+          method: "POST",
+          url: "/register",
+          data,
+          // 사용자가 버튼을 눌러 데이터를 보냄 -> router.post("/register", controller.register) 실행 -> controller -> register 함수 실행 -> view로 응답을 보냄
+        }).then((response) => {
+          // controller로부터 응답을 받으면
+          document.location.reload();
+        });
+      }
+    </script>
+  </body>
+</html>
