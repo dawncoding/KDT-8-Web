@@ -8,7 +8,7 @@ const upload = multer({
   dest: "uploads/", // dest: 업로드 파일 경로 지정
 });
 
-// multer 세부 설ㅓ
+// multer 세부 설정
 const uploadDetail = multer({
   // storage: 저장할 공간에 대한 정보
   // diskStorage: 파일을 디스크에 저장하기 위한 모든 제어 기능을 제공
