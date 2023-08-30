@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        height: 100vh;
+        margin: 0;
+      }
+      #chat {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
+      #message {
+        flex: 1;
+      }
+      #space {
+        width: 100%;
+        overflow-y: scroll;
+        border: 1px solid #ccc;
+        padding: 10px;
+        max-height: calc(100vh - 200px);
+      }
+      .message {
+        padding: 5px 10px;
+        border-radius: 5px;
+        max-width: 80%;
+      }
+      .my-message {
+        align-self: flex-end;
+        background-color: #007bff;
+        color: white;
+      }
+      .other-message {
+        align-self: flex-start;
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="space"></div>
+    <form id="chat">
+      <input type="text" id="message" placeholder="채팅 내용" />
+      <button>채팅</button>
+    </form>
+
+    <script>
+      const chatForm = document.querySelector("#chat");
+      const space = document.querySelector("#space");
+      const socket = io();
+      const userInfo = prompt("채팅방에 참여할 닉네임을 입력하세요: ");
+      const chatroom = prompt("채팅방을 입력하세요: ");
+      socket.emit("join", { chatroom, userInfo });
+      socket.on("userjoin", (message) => {
+        console.log(message);
+      });
+      socket.on("chat", (message) => {
+        // p 태그 생성
+        const p = document.createElement("p");
+        p.textContent = message;
+
+        if (message.sender === userInfo) {
+          p.className = "message my-message";
+        } else {
+          p.className = "message other-message";
+        }
+        space.appendChild(p);
+        space.scrollTop = space.scrollHeight; // Scroll to the bottom
+      });
+      chatForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const msg = chatForm.querySelector("#message");
+        socket.emit("message", { sender: userInfo, message: msg.value });
+        msg.value = "";
+      });
+    </script>
+  </body>
+</html>

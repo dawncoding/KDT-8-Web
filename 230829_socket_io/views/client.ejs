@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/socket.io/socket.io.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Socket IO</h1>
+    <ul></ul>
+    <form id="chat">
+      <input type="text" id="user" placeholder="사용자명" />
+      <input type="text" id="message" placeholder="채팅 내용" />
+      <button>채팅</button>
+    </form>
+    <script>
+      const chatForm = document.querySelector("#chat");
+      const ul = document.querySelector("ul");
+      // io(): 클라이언트 소켓 생성 및 연결 설정
+      const socket = io();
+
+      // server.js의 socket.on()에서 작성한 이벤트 이름과 동일하게 작성해야 한다.
+      socket.emit(
+        "new_message",
+        { name: "client", message: "서버 접속" },
+        () => {}
+      );
+      // 폼 이벤트
+      chatForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const user = chatForm.querySelector("#user");
+        const message = chatForm.querySelector("#message");
+        socket.emit(
+          "new_message",
+          {
+            name: user.value,
+            message: message.value,
+          },
+          (res) => {
+            console.log("res", res);
+            const li = document.createElement("li");
+            li.textContent = `${res.name}: ${res.message}`;
+            ul.appendChild(li);
+          }
+        );
+      });
+    </script>
+  </body>
+</html>
