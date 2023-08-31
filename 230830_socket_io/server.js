@@ -21,11 +21,14 @@ app.get("/:room", (req, res) => {
 function getUsersInRoom(room) {
   const users = [];
   const clients = io.sockets.adapter.rooms.get(room);
-  console.log(clients);
+  //console.log(clients);
   if (clients) {
     clients.forEach((socketId) => {
       const userSocket = io.sockets.sockets.get(socketId);
-      users.push(userSocket.user);
+      // 사용자에게 메시지를 보내기 위해서 객체 형태로 변경
+      // key: 소켓 아이디, value: 이름
+      const info = { name: userSocket.user, key: socketId };
+      users.push(info);
     });
   }
   return users;
@@ -36,7 +39,8 @@ io.on("connection", (socket) => {
   //socket!//
   //socket은 접속한 웹페이지, io는 접속해있는 모든 웹페이지
   //웹 페이지가 접속이되면 고유한 id값이 생성됨. socket.id로 확인가능
-  console.log(io.sockets);
+  //console.log(io.sockets);
+
   //채팅방 목록 보내기
   socket.emit("roomList", roomList);
   //채팅방 만들기 생성
@@ -47,6 +51,8 @@ io.on("connection", (socket) => {
     //socket은 객체이며 원하는 값을 할당할 수 있음
     socket.room = roomName;
     socket.user = userName;
+
+    socket.to(roomName).emit("notice", `${socket.id}님이 입장했습니다.`);
 
     //채팅방 목록 갱신
     if (!roomList.includes(roomName)) {
@@ -60,10 +66,23 @@ io.on("connection", (socket) => {
   });
 
   socket.on("sendMessage", (message) => {
-    io.to(socket.room).emit(
-      "newMessage",
-      `${message.user} : ${message.message}`
-    );
+    if (message.user === "all") {
+      io.to(socket.room).emit(
+        "newMessage",
+        message.message,
+        message.nick,
+        false
+      );
+    } else {
+      io.to(message.user).emit(
+        "newMessage",
+        message.messsage,
+        message.nick,
+        true
+      );
+      // 자기 자신한테 메시지 띄우기
+      socket.emit("newMessage", message.messsage, message.nick, true);
+    }
   });
 
   socket.on("disconnect", () => {
