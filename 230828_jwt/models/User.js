@@ -1,0 +1,31 @@
+const { DataTypes } = require('sequelize');
+
+const Model = (sequelize) => {
+    return sequelize.define('user', {
+        //컬럼 정의
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false, //NOT NULL
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        userid: {
+            type: DataTypes.STRING(20),
+            allowNull: false,
+        },
+        name: {
+            type: DataTypes.STRING(10),
+            allowNull: false,
+        },
+        pw: {
+            type: DataTypes.STRING(255),
+            allowNull: false,
+        },
+        str_id: {
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
+        },
+    });
+};
+
+module.exports = Model;
