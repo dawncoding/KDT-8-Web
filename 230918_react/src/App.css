@@ -1,0 +1,58 @@
+.text {
+  display: flex;
+  justify-content: center;
+  background-color: blanchedalmond;
+  color: orange;
+  font-size: 100px;
+}
+
+.id,
+.pw {
+  display: flex;
+  justify-content: center;
+}
+
+input {
+  margin-left: 10px;
+}
+
+.rainbow {
+  display: flex;
+  flex-direction: row;
+}
+
+.red {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+}
+.orange {
+  width: 100px;
+  height: 150px;
+  background-color: orange;
+}
+.yellow {
+  width: 100px;
+  height: 200px;
+  background-color: yellow;
+}
+.green {
+  width: 100px;
+  height: 250px;
+  background-color: green;
+}
+.blue {
+  width: 100px;
+  height: 300px;
+  background-color: blue;
+}
+.navy {
+  width: 100px;
+  height: 350px;
+  background-color: navy;
+}
+.purple {
+  width: 100px;
+  height: 400px;
+  background-color: purple;
+}
