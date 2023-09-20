@@ -1,0 +1,27 @@
+.box {
+  width: 500px;
+  height: 400px;
+  background-color: lightyellow;
+  text-align: center;
+}
+
+.best {
+  font-size: 40px;
+  color: orange;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.book {
+  position: static;
+}
