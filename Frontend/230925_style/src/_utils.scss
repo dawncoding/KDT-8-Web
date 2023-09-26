@@ -1,0 +1,55 @@
+// _util.scss
+// Scss 파일명 앞에 _를 붙여서 작성하면, 파일 단위로 분리되어 컴파일 되지 않는다.
+$color-red: red;
+$color-orange: orange;
+$color-yellow: yellow;
+$color-green: green;
+$color-blue: blue;
+$color-navy: navy;
+$color-purple: purple;
+
+@mixin box($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($color) {
+  position: relative;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $color;
+  margin: 10px;
+}
+
+// $name: 애니메이션 이름
+@mixin rotate-circle($name, $size) {
+  @keyframes #{$name} {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    25% {
+      top: 0;
+      left: $size;
+    }
+    50% {
+      top: $size;
+      left: $size;
+    }
+    75% {
+      top: $size;
+      left: 0;
+    }
+    100% {
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+// @mixin moveCircle($x, $y) {
+//   transform: translateX($x) translateY($y);
+// }
