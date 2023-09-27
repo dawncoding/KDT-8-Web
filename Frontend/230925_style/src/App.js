@@ -2,6 +2,8 @@ import BugComponent from "./Bug";
 import Circle from "./Circle";
 import SassComponent from "./SassComponent";
 import Style from "./Style";
+import StylePrac3 from "./StylePrac3";
+import StylePrac4 from "./StylePrac4";
 import StyledComponent from "./StyledComponent";
 
 function App() {
@@ -11,7 +13,9 @@ function App() {
       <SassComponent />
       <BugComponent /> */}
       {/* <Circle /> */}
-      <StyledComponent />
+      {/* <StyledComponent /> */}
+      {/* <StylePrac3 /> */}
+      <StylePrac4 />
     </>
   );
 }
