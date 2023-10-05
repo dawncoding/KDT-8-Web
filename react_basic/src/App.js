@@ -1,13 +1,21 @@
-import LifeCycleClass from './08Lifecycle/LifeCycleClass';
-import LifeCycleFunc from './08Lifecycle/LifeCycleFunc';
+import { useState } from "react";
+import LanguageSelector from "./14Context/LangSelector";
+import MyContext from "./14Context/store/lang-context";
+import LanguageProvider from "./14Context/LangProvider";
 
 function App() {
-    return (
-        <>
-            {/* <LifeCycleClass /> */}
-            <LifeCycleFunc />
-        </>
-    );
+  // const [language, setLanguage] = useState("ko");
+
+  return (
+    <>
+      {/* <MyContext.Provider value={{ language, setLanguage }}>
+        <LanguageSelector />
+      </MyContext.Provider> */}
+      <LanguageProvider>
+        <LanguageSelector />
+      </LanguageProvider>
+    </>
+  );
 }
 
 export default App;
