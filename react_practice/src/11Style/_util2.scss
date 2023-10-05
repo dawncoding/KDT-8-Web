@@ -1,0 +1,31 @@
+@mixin circle($color) {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background-color: $color;
+}
+
+@mixin rotate-circle($name, $size) {
+    @keyframes #{$name} {
+        0% {
+            top: 0;
+            left: 0;
+        }
+        25% {
+            top: 0;
+            left: $size;
+        }
+        50% {
+            top: $size;
+            left: $size;
+        }
+        75% {
+            top: $size;
+            left: 0;
+        }
+        100% {
+            top: 0;
+            left: 0;
+        }
+    }
+}

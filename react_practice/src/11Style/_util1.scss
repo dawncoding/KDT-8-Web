@@ -1,0 +1,18 @@
+@mixin eye($w, $h, $color) {
+    width: $w;
+    height: $h;
+    background-color: $color;
+    position: relative;
+}
+
+@mixin round() {
+    position: absolute;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+@mixin position($top, $left) {
+    top: 100px + $top;
+    left: 100px + $left;
+}
